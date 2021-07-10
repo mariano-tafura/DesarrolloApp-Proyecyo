@@ -1,12 +1,21 @@
 import React from "react"
-import { Text,View,StyleSheet } from "react-native"
+import { Text,View,StyleSheet,FlatList } from "react-native"
 import TurnList from "../../components/TurnList"
+import { HorariosPadel } from "../../data/mock-data"
 
 const Padel = () => {
+    handleSelected=()=>{
+
+    }
+    renderItem=({item})=><TurnList item={item} onSelected={handleSelected}/>
     return (
         <View style={styles.containerTurn}>
             <Text style={styles.titleHome}>Elige el horario</Text>
-            <TurnList></TurnList>
+            <FlatList 
+                    data={HorariosPadel}
+                    renderItem={renderItem}
+                    keyExtractor={item=>item.id}
+            />
         </View>
     )
 }
