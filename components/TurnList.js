@@ -1,6 +1,5 @@
 import React, {useState} from "react"
 import { View,StyleSheet,TouchableHighlight,Text } from "react-native"
-import { HorariosFutbol } from "../data/mock-data"
 
 const TurnList = ({item}) => {
     
@@ -14,11 +13,7 @@ const TurnList = ({item}) => {
 }
 
 const styles= StyleSheet.create({
-    // TurnListContainer:{
-    //     backgroundColor:"#0e0f19",
-    //     flex:1,
-       
-    // },
+
     itemTurn:{
         backgroundColor:"#57886c",
         margin:10,
@@ -34,6 +29,7 @@ const styles= StyleSheet.create({
         justifyContent:"center",
         alignSelf:"center",
         fontSize:25,
+        color:"white",
     },
 })
 

@@ -2,10 +2,11 @@ import React from "react"
 import { Text,View,StyleSheet,Button,TouchableHighlight } from "react-native"
 import Card from "../../components/Card"
 import Colors from "../../constants/Colors"
+import { useSelector } from "react-redux"
 
 const Home = ({navigation}) => {
     const navFutbol=()=>{
-        navigation.navigate("Futbol")
+        navigation.navigate("CanchasFutbol")
     }
 
     const navPadel=()=>{

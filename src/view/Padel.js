@@ -1,7 +1,7 @@
 import React from "react"
 import { Text,View,StyleSheet,FlatList } from "react-native"
 import TurnList from "../../components/TurnList"
-import { HorariosPadel } from "../../data/mock-data"
+import { HorariosPadel } from "../../data/turn-data"
 
 const Padel = () => {
     handleSelected=()=>{
@@ -12,9 +12,9 @@ const Padel = () => {
         <View style={styles.containerTurn}>
             <Text style={styles.titleHome}>Elige el horario</Text>
             <FlatList 
-                    data={HorariosPadel}
-                    renderItem={renderItem}
-                    keyExtractor={item=>item.id}
+                data={HorariosPadel}
+                renderItem={renderItem}
+                keyExtractor={item=>item.id}
             />
         </View>
     )

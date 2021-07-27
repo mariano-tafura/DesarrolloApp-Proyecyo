@@ -1,20 +1,24 @@
 import React from "react"
 import { Text,View,StyleSheet,FlatList } from "react-native"
 import TurnList from "../../components/TurnList"
-import { HorariosFutbol } from "../../data/mock-data"
+import { useSelector, connect, useDispatch } from "react-redux"
 
-const Futbol = (item) => {
+
+const Futbol = () => {
+    const dispatch=useDispatch()
+    const horarioCancha=useSelector(state=>state.turn.hora)
+
     handleSelected=()=>{
-
     }
-    renderItem=({item})=><TurnList item={item} onSelected={handleSelected}/>
+    
+    renderItem=({item})=><TurnList item={item} onSelected={handleSelected()}/>
     return (
         <View style={styles.containerTurn}>
             <Text style={styles.titleHome}>Elige el horario</Text>
             <FlatList 
-                    data={HorariosFutbol}
-                    renderItem={renderItem}
-                    keyExtractor={item=>item.id}
+            data={horarioCancha}
+            renderItem={renderItem}
+            keyExtractor={item=>item.id}
             />
         </View>
     )
