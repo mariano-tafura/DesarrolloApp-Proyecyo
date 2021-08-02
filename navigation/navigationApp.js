@@ -8,6 +8,7 @@ import Futbol from './../src/view/Futbol';
 import Padel from './../src/view/Padel';
 import Colors from './../constants/Colors';
 import Canchas from '../src/view/CanchasFutbol';
+import Reserva from '../src/view/Reserva';
 const Stack = createStackNavigator()
 
 const NavigationApp = () =>(
@@ -22,6 +23,7 @@ const NavigationApp = () =>(
           <Stack.Screen name="Futbol" component={Futbol} option={{title:"Futbol"}}/>
           <Stack.Screen name="Padel" component={Padel} option={{title:"Padel"}}/>
           <Stack.Screen name="CanchasFutbol" component={Canchas} option={{title:"Canchas"}}/>
+          <Stack.Screen name="Reserva" component={Reserva} option={{title:"Reserva"}}/>
 
         </Stack.Navigator> 
 

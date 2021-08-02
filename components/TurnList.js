@@ -1,11 +1,11 @@
 import React, {useState} from "react"
 import { View,StyleSheet,TouchableHighlight,Text } from "react-native"
 
-const TurnList = ({item}) => {
+const TurnList = ({item,nav}) => {
     
     return (
         <View>
-            <TouchableHighlight style={styles.itemTurn}>
+            <TouchableHighlight style={styles.itemTurn} onPress={nav}>
                 <Text style={styles.item}>{item.turno}</Text>
             </TouchableHighlight>
         </View>

@@ -2,17 +2,16 @@ import React from "react"
 import { Text,View,StyleSheet,FlatList } from "react-native"
 import { useSelector,useDispatch,connect } from "react-redux"
 import CanchaList from "../../components/CardCancha"
-import { selectCancha } from "../../store/action/action-cancha"
+
 
 const Canchas = ({navigation}) => {
-    const dispatch=useDispatch()
-    const numCancha=useSelector(state=>state.cancha.numero)
-    const handleSelected=(item)=>{
-        dispatch(selectCancha(item.id))
-        navigation.navigate("Futbol",{
-            name:item.cancha
-        })
+
+    const numCancha=useSelector(state=>state.canchaStore.numero)
+    const handleSelected=()=>{
+        navigation.navigate("Futbol")
     }
+
+    
 
     renderItem=({item})=><CanchaList  item={item} nav={()=>handleSelected(item)}/>
     return (

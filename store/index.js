@@ -3,8 +3,8 @@ import TurnReducer from "./reducers/TurnReducers"
 import CanchaReducer from "./reducers/CanchaReducers"
 
 const RootReducer = combineReducers({
-    turn: TurnReducer,
-    cancha: CanchaReducer,
+    turnStore: TurnReducer,
+    canchaStore: CanchaReducer,
 })
 
 export default createStore(RootReducer)

@@ -2,16 +2,21 @@ import React from "react"
 import { Text,View,StyleSheet,FlatList } from "react-native"
 import TurnList from "../../components/TurnList"
 import { useSelector, connect, useDispatch } from "react-redux"
+import { selectCancha } from "../../store/action/action-cancha"
+import { selectTurn } from "../../store/action/actions-horario"
 
 
-const Futbol = () => {
+const Futbol = ({navigation}) => {
     const dispatch=useDispatch()
-    const horarioCancha=useSelector(state=>state.turn.hora)
+    const horarioCancha=useSelector(state=>state.turnStore.hora)
 
-    handleSelected=()=>{
+    handleSelected=(item)=>{
+        dispatch(selectCancha(item.id))
+        dispatch(selectTurn(item.turn))
+        navigation.navigate("Reserva")
     }
     
-    renderItem=({item})=><TurnList item={item} onSelected={handleSelected()}/>
+    renderItem=({item})=><TurnList item={item} nav={()=>handleSelected(item)}/>
     return (
         <View style={styles.containerTurn}>
             <Text style={styles.titleHome}>Elige el horario</Text>
@@ -39,4 +44,4 @@ const styles=StyleSheet.create({
 
 })
 
-export default Futbol
+export default connect()(Futbol)
