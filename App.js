@@ -3,9 +3,10 @@ import 'react-native-gesture-handler';
 import { StyleSheet} from 'react-native';
 import {useFonts} from "expo-font"
 import AppLoading from "expo-app-loading"
-import NavigationApp from './navigation/navigationApp';
 import { Provider } from 'react-redux';
 import store from './store';
+import Colors from './constants/Colors';
+import MainNavigator from './navigation'
 
 
 export default function App() {
@@ -20,7 +21,7 @@ export default function App() {
 
   return (
     <Provider store={store}>
-      <NavigationApp />
+      <MainNavigator/>
     </Provider>
   );
 }
@@ -28,7 +29,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: Colors.Primary,
     alignItems: 'flex-start',
     justifyContent: 'center',
   },

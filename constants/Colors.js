@@ -4,4 +4,6 @@ export default {
     ColorPadel:"#466060",
     verdeClaro:"#81a684",
     rosa:"#f8c7cc",
+    negro:"black",
+    rojo:"#B0413E",
 }

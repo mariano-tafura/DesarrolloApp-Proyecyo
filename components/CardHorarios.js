@@ -1,12 +1,12 @@
 import React, {useState} from "react"
 import { View,StyleSheet,TouchableHighlight,Text } from "react-native"
 
-const TurnList = ({item,nav}) => {
+const ListaHorarios = ({item,onSelected}) => {
     
     return (
         <View>
-            <TouchableHighlight style={styles.itemTurn} onPress={nav}>
-                <Text style={styles.item}>{item.turno}</Text>
+            <TouchableHighlight style={styles.itemHorarios} onPress={()=>onSelected(item)}>
+                <Text style={styles.item}>{item.horario}</Text>
             </TouchableHighlight>
         </View>
     )
@@ -14,7 +14,7 @@ const TurnList = ({item,nav}) => {
 
 const styles= StyleSheet.create({
 
-    itemTurn:{
+    itemHorarios:{
         backgroundColor:"#57886c",
         margin:10,
         width:"60%",
@@ -33,4 +33,4 @@ const styles= StyleSheet.create({
     },
 })
 
-export default TurnList
+export default ListaHorarios

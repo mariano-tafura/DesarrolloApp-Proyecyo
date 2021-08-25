@@ -3,11 +3,11 @@ import React, {useState} from "react"
 import { View,StyleSheet,TouchableHighlight,Text } from "react-native"
 import Colors from "../constants/Colors"
 
-const ListaCancha = ({item,onSelected}) => {
+const CardDeporte = ({item,onSelected}) => {
     return (
         <View >
-            <TouchableHighlight style={styles.itemCancha} onPress={()=>onSelected(item)} >
-                <Text style={styles.item}>{item.cancha}</Text>
+            <TouchableHighlight style={styles.itemDeporte} onPress={()=>onSelected(item)} >
+                <Text style={styles.item}>{item.deporte}</Text>
             </TouchableHighlight>
         </View>
     )
@@ -15,7 +15,7 @@ const ListaCancha = ({item,onSelected}) => {
 
 const styles= StyleSheet.create({
 
-    itemCancha:{
+    itemDeporte:{
         width:"90%",
         height:100,
         shadowColor:"black",
@@ -42,4 +42,4 @@ const styles= StyleSheet.create({
     
 })
 
-export default ListaCancha
+export default CardDeporte

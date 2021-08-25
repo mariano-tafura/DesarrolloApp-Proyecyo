@@ -1,10 +1,26 @@
-import { createStore, combineReducers} from "redux"
-import TurnReducer from "./reducers/TurnReducers"
-import CanchaReducer from "./reducers/CanchaReducers"
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
+import AuthReducer from './reducers/auth.reducer';
+import CanchaReducer from './reducers/cancha.reducers';
+import ConfirmacionReducer from './reducers/confirmacion.reducers';
+import DeporteReducer from './reducers/deporte.Reducers';
+import HorariosReducer from './reducers/horarios.reducers';
+import OrderReducer from './reducers/order.reducer';
 
 const RootReducer = combineReducers({
-    turnStore: TurnReducer,
-    canchaStore: CanchaReducer,
+  deportes: DeporteReducer ,
+  canchas: CanchaReducer,
+  horarios: HorariosReducer,
+  // reservas:ReservaReducer,
+  confirmacion: ConfirmacionReducer,
+  auth: AuthReducer,
+  orders: OrderReducer,
+
 })
 
-export default createStore(RootReducer)
+export default createStore(
+  RootReducer,
+  compose(
+    applyMiddleware(thunk),
+  ),
+)
